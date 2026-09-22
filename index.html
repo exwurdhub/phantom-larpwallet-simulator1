@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <title>LarpWallet - Crypto Simulator</title>
+    
+    <!-- Watermark & SEO Metadata for larpwallet.org -->
+    <meta property="og:title" content="LarpWallet — Crypto Wallet Simulator">
+    <meta property="og:description" content="Simulate crypto assets dynamically with LarpWallet (larpwallet.org).">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="larpwallet.org">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="wallet">
+
+    <!-- Top Navigation Bar / Watermark -->
+    <header class="top">
+        <div class="logo">
+            <span class="mark">⚡</span>
+            <span>larpwallet.org</span>
+        </div>
+        <div class="sp"></div>
+        <button class="btn primary" id="openSettingsBtn">Settings</button>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="wrap">
+        
+        <!-- Controls & Configuration Panel -->
+        <aside class="panel" id="settingsPanel">
+            <div class="panel-tete">
+                <h2>Wallet Configuration</h2>
+                <button class="panel-x" id="closeSettingsBtn">✕</button>
+            </div>
+
+            <!-- Token Management Section -->
+            <details class="group" open>
+                <summary>Tokens & Balances</summary>
+                <div class="body">
+                    <div class="field">
+                        <label>Wallet Name</label>
+                        <input type="text" id="walletName" value="Main Wallet (larpwallet.org)">
+                    </div>
+                    
+                    <div id="tokenList">
+                        <!-- Dynamic Token Items inserted by JS -->
+                    </div>
+                    
+                    <button class="btn" style="width: 100%; margin-top: 10px;" id="addTokenBtn">+ Add Token</button>
+                </div>
+            </details>
+            <div class="panel-cale"></div>
+        </aside>
+
+        <!-- Smartphone Preview Display Stage -->
+        <section class="stage">
+            <div class="device">
+                <div class="screen-frame">
+                    <div class="island"></div>
+                    
+                    <!-- Internal Wallet Viewport -->
+                    <div class="wallet-viewport" id="walletApp">
+                        <div class="wallet-header">
+                            <span id="displayWalletName">Main Wallet</span>
+                            <small class="watermark-tag">larpwallet.org</small>
+                        </div>
+                        <div class="wallet-balance">
+                            <h1 id="totalBalance">$0.00</h1>
+                        </div>
+                        <div class="wallet-tokens" id="displayTokens">
+                            <!-- Rendered Tokens Display -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

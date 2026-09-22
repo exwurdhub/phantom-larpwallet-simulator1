@@ -1,0 +1,67 @@
+/* Custom Properties & Themes (larpwallet.org) */
+:root {
+  --bg: #0a0811;
+  --panel: #15121f;
+  --panel-2: #1b1729;
+  --line: #241f36;
+  --ink: #eceaf6;
+  --dim: #9b95ae;
+  --mute: #6d6684;
+  --brand: #9670ff;
+  --brand-ink: #100d1b;
+  --halo: rgba(150, 112, 255, 0.45);
+  --r: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+/* Top Bar */
+.top {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 22px; background: rgba(10,8,17,.76);
+  backdrop-filter: blur(18px); border-bottom: 1px solid var(--line);
+}
+.logo { font-weight: 700; color: var(--brand); }
+.sp { flex: 1; }
+
+.btn {
+  border: 1px solid var(--line); background: var(--panel-2); color: var(--ink);
+  padding: 9px 15px; border-radius: 10px; cursor: pointer; font-weight: 600;
+}
+.btn.primary { background: var(--brand); color: var(--brand-ink); border: 0; }
+
+/* Main Grid Layout */
+.wrap { display: grid; grid-template-columns: 380px 1fr; min-height: calc(100vh - 58px); }
+@media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
+
+/* Controls Panel */
+.panel { border-right: 1px solid var(--line); padding: 20px; background: var(--bg); }
+.panel-tete { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.panel-x { background: none; border: 0; color: var(--ink); cursor: pointer; font-size: 18px; }
+
+.group { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); padding: 14px; margin-bottom: 14px; }
+.field { margin-bottom: 12px; }
+.field label { display: block; font-size: 12px; color: var(--dim); margin-bottom: 4px; }
+input[type=text], input[type=number] {
+  width: 100%; background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px; color: var(--ink); outline: none;
+}
+
+/* Device Simulator Stage */
+.stage { display: flex; justify-content: center; align-items: flex-start; padding: 40px; }
+.device {
+  width: 360px; border-radius: 40px; padding: 12px;
+  background: linear-gradient(160deg, #3b3552, #141020);
+  box-shadow: 0 0 0 1px rgba(150, 112, 255, 0.2), 0 28px 60px rgba(0,0,0,0.8);
+}
+.screen-frame { border-radius: 32px; background: #000; padding: 20px 16px; position: relative; min-height: 650px; }
+.island { width: 110px; height: 28px; background: #000; border-radius: 20px; margin: 0 auto 20px; }
+
+/* Internal Wallet Styling & Watermark */
+.wallet-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.watermark-tag { font-size: 10px; color: var(--mute); border: 1px solid var(--line); padding: 2px 6px; border-radius: 4px; }
+.wallet-balance { text-align: center; margin: 30px 0; }
+.wallet-balance h1 { font-size: 36px; font-weight: 800; }
+
+.tok-item { display: flex; justify-content: space-between; padding: 12px; border-bottom: 1px solid var(--line); }
